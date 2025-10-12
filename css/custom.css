@@ -1,15 +1,13 @@
-/* Liberty Concrete Coatings Custom Styles - Grey & Blue Theme */
+/* Liberty Concrete Coatings Custom Styles */
 
-/* Custom property variables - Grey & Blue Theme */
+/* CSS Variables */
 :root {
-    --primary-color: #3498db;        /* Professional Blue */
-    --secondary-color: #2c3e50;      /* Dark Blue-Grey */
-    --accent-color: #7f8c8d;         /* Medium Grey */
-    --light-grey: #bdc3c7;          /* Light Grey */
-    --dark-grey: #34495e;           /* Dark Grey */
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --dark-grey: #34495e;
     --text-dark: #2c3e50;
     --text-light: #7f8c8d;
-    --hover-blue: #2980b9;          /* Darker Blue for hovers */
+    --hover-blue: #2980b9;
 }
 
 /* General Styles */
@@ -19,10 +17,8 @@ body {
     color: var(--text-dark);
 }
 
-/* Hero Section */
-.hero-section {
-    position: relative;
-    overflow: hidden;
+html {
+    scroll-behavior: smooth;
 }
 
 /* Service Icons */
@@ -36,7 +32,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     font-size: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .service-icon:hover {
@@ -45,68 +41,25 @@ body {
     background-color: var(--hover-blue);
 }
 
-/* Portfolio Cards */
-.portfolio-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-image-placeholder {
-    height: 200px;
-    background: linear-gradient(135deg, var(--light-grey) 0%, var(--accent-color) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-dark);
-    font-size: 3rem;
-    text-align: center;
-}
-
-.portfolio-image-placeholder p {
-    font-size: 1rem;
-    margin-top: 10px;
-    font-weight: 500;
-}
-
-/* Feature Image Placeholder */
-.feature-image-placeholder {
-    height: 350px;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-grey) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 4rem;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.feature-image-placeholder p {
-    font-size: 1.2rem;
-    margin-top: 15px;
+.service-icon i {
+    font-size: 2rem;
 }
 
 /* Button Styles */
+.btn {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    transition: all 0.3s ease;
-    font-weight: 600;
 }
 
 .btn-primary:hover {
     background-color: var(--hover-blue);
     border-color: var(--hover-blue);
-    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
@@ -114,8 +67,6 @@ body {
 .btn-outline-primary {
     border-color: var(--primary-color);
     color: var(--primary-color);
-    transition: all 0.3s ease;
-    font-weight: 600;
 }
 
 .btn-outline-primary:hover {
@@ -125,37 +76,27 @@ body {
     transform: translateY(-2px);
 }
 
-/* Navbar */
-.navbar-brand {
-    font-size: 1.5rem;
-    color: var(--primary-color) !important;
-}
-
+/* Navigation */
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: var(--primary-color);
-}
-
+.navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     color: var(--primary-color) !important;
 }
 
-/* Section Spacing */
+/* Layout */
 section {
     padding: 5rem 0;
 }
 
-/* Cards */
 .card {
     border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
     border: none;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
@@ -163,7 +104,7 @@ section {
     transform: translateY(-5px);
 }
 
-/* Background Colors */
+/* Color Overrides */
 .bg-primary {
     background-color: var(--primary-color) !important;
 }
@@ -172,12 +113,19 @@ section {
     background-color: var(--secondary-color) !important;
 }
 
-/* Text Colors */
 .text-primary {
     color: var(--primary-color) !important;
 }
 
-/* Contact Section Styling */
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-grey) 100%);
+}
+
 #contact .bg-secondary {
     transition: all 0.3s ease;
 }
@@ -187,9 +135,49 @@ section {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-footer {
-    background-color: #ecf0f1 !important;
+/* Specific Button Overrides */
+.hero-section .btn {
+    font-size: 1.1rem;
+    padding: 15px 35px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover-blue);
+}
+
+/* Contact Button Overrides */
+.contact-btn {
+    min-width: 200px;
+    padding: 12px 24px;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Carousel Button Overrides */
+[id^="btn-"] {
+    min-width: 200px;
+    padding: 12px 24px;
+}
+
+[id^="btn-"]:hover {
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3) !important;
 }
 
 /* Responsive Design */
@@ -215,124 +203,4 @@ footer {
         height: 60px;
         font-size: 1.5rem;
     }
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Animation for elements coming into view */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.card, .service-icon {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* Hover effects for better interactivity */
-.btn {
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--hover-blue);
-}
-
-/* Professional styling for construction industry */
-.display-2, .display-4 {
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Icon styling for better visibility */
-.bi {
-    font-size: inherit;
-}
-
-/* Custom styling for service cards */
-.service-icon i {
-    font-size: 2rem;
-}
-
-/* Enhanced card styling */
-.card-body {
-    padding: 2rem;
-}
-
-/* Professional color scheme for concrete industry */
-.bg-light {
-    background-color: #f8f9fa !important;
-}
-
-/* Enhanced typography */
-.lead {
-    font-weight: 400;
-    line-height: 1.7;
-}
-
-/* Contact section enhancements */
-#contact {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-grey) 100%);
-}
-
-/* Social media links */
-footer a {
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--primary-color) !important;
-}
-
-/* Professional button spacing */
-.btn {
-    letter-spacing: 0.5px;
-}
-
-/* Enhanced shadows for depth */
-.shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-}
-
-/* Concrete industry specific styling */
-.hero-section .btn {
-    font-size: 1.1rem;
-    padding: 15px 35px;
-}
-
-/* Professional spacing */
-.mb-5 {
-    margin-bottom: 3.5rem !important;
-}
-
-/* Enhanced readability */
-.text-muted {
-    color: var(--text-light) !important;
 }
